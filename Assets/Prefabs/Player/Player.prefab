@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3897575101879408558}
   - component: {fileID: 3135721761315359348}
+  - component: {fileID: 6187375536126261682}
   - component: {fileID: 36710946375502704}
   - component: {fileID: 5695759489851145515}
+  - component: {fileID: 773380381717513614}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -48,6 +50,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementDistance: 0.16
   movementSpeed: 0.75
+--- !u!114 &6187375536126261682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610480741837181193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869e7099e1025ac4289935032e6dda5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &36710946375502704
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -133,3 +147,25 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &773380381717513614
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610480741837181193}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 41a5b7946898dc243bb00102028244b1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerGridMovement : MonoBehaviour
 {
+    public event Action<Vector2> MovementUpdated;
+
     [SerializeField]
     private float movementDistance = 0.32f, movementSpeed = 1f;
     private Queue<Vector2> movementCommands;
@@ -44,7 +47,10 @@ public class PlayerGridMovement : MonoBehaviour
         {
             Vector2 currentCommand = movementCommands.Dequeue();
             Vector2 targetPosition = currentCommand + (Vector2)transform.position;
-            while(Vector2.Distance(transform.position, targetPosition) >= movementSpeed / 1000f)
+
+            MovementUpdated?.Invoke(currentCommand);
+
+            while (Vector2.Distance(transform.position, targetPosition) >= movementSpeed / 1000f)
             {
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.fixedDeltaTime * movementSpeed);
                 yield return new WaitForFixedUpdate();
@@ -53,6 +59,8 @@ public class PlayerGridMovement : MonoBehaviour
             if (isInputtingMove && movementCommands.Count == 0)
                 movementCommands.Enqueue(currentCommand);
         }
+        MovementUpdated?.Invoke(Vector2.zero);
+
         isMoving = false;
 
     }
