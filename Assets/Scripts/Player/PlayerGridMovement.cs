@@ -44,7 +44,7 @@ public class PlayerGridMovement : MonoBehaviour
         {
             Vector2 currentCommand = movementCommands.Dequeue();
             Vector2 targetPosition = currentCommand + (Vector2)transform.position;
-            while(Vector2.Distance(transform.position, targetPosition) >= movementSpeed/100)
+            while(Vector2.Distance(transform.position, targetPosition) >= movementSpeed / 1000f)
             {
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.fixedDeltaTime * movementSpeed);
                 yield return new WaitForFixedUpdate();
