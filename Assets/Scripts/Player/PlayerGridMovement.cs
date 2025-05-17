@@ -47,18 +47,18 @@ public class PlayerGridMovement : MonoBehaviour
         {
             Vector2 currentCommand = movementCommands.Dequeue();
             Vector2 targetPosition = currentCommand + (Vector2)transform.position;
-            if (!Physics2D.OverlapPoint(targetPosition))
+            if (!Physics2D.OverlapCircle(targetPosition, 0.04f))
             {
-            MovementUpdated?.Invoke(currentCommand);
+                MovementUpdated?.Invoke(currentCommand);
 
-            while (Vector2.Distance(transform.position, targetPosition) >= movementSpeed / 1000f)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.fixedDeltaTime * movementSpeed);
-                yield return new WaitForFixedUpdate();
-            }
-            transform.position = targetPosition;
-            if (isInputtingMove && movementCommands.Count == 0)
-                movementCommands.Enqueue(currentCommand);
+                while (Vector2.Distance(transform.position, targetPosition) >= movementSpeed / 1000f)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.fixedDeltaTime * movementSpeed);
+                    yield return new WaitForFixedUpdate();
+                }
+                transform.position = targetPosition;
+                if (isInputtingMove && movementCommands.Count == 0)
+                    movementCommands.Enqueue(currentCommand);
             }
         }
         MovementUpdated?.Invoke(Vector2.zero);
