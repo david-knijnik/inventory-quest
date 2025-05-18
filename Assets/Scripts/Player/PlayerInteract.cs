@@ -5,10 +5,12 @@ using UnityEngine.InputSystem;
 public class PlayerInteract : MonoBehaviour
 {
     private Vector2 facingDirection;
+    private PlayerGridMovement playerGridMovement;
 
     private void Start()
     {
-        GetComponent<PlayerGridMovement>().MovementUpdated += SetFacingDirection;
+        playerGridMovement = GetComponent<PlayerGridMovement>();
+        playerGridMovement.MovementUpdated += SetFacingDirection;
     }
 
     private void SetFacingDirection(Vector2 newFacingDirection)
@@ -26,7 +28,10 @@ public class PlayerInteract : MonoBehaviour
         {
             var interactable = hitCollider.GetComponent<IPlayerInteractable>();
             if (interactable != null)
+            {
+                playerGridMovement.EnableMovement = false;
                 interactable.Interact();
+            }
         }
     }
 }

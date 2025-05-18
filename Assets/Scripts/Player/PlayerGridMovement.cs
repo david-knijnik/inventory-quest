@@ -7,6 +7,17 @@ using UnityEngine.InputSystem;
 public class PlayerGridMovement : MonoBehaviour
 {
     public event Action<Vector2> MovementUpdated;
+    public bool EnableMovement
+    {
+        get => enableMovement; 
+        set
+        {
+            if (!value)
+                movementCommands.Clear();
+            enableMovement = value;
+        }
+    }
+    private bool enableMovement;
 
     [SerializeField]
     private float movementDistance = 0.32f, movementSpeed = 1f;
@@ -16,12 +27,15 @@ public class PlayerGridMovement : MonoBehaviour
     private void Start()
     {
         movementCommands = new();
+        EnableMovement = true;
     }
 
     public void OnMove(InputValue value)
     {
+        if (!EnableMovement)
+            return;
         Vector2 inputValue = value.Get<Vector2>();
-        if(inputValue != Vector2.zero)
+        if (inputValue != Vector2.zero)
         {
             movementCommands.Clear();
             if (inputValue.x != 0)
