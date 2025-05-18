@@ -5,6 +5,8 @@ public class InventoryUI : MonoBehaviour
 {
     [SerializeField]
     private RectTransform playerInventory, openedInventory;
+    [SerializeField]
+    private PlayerGridMovement playerGridMovement;
 
     //The one instance of this Singleton.
     public static InventoryUI Instance;
@@ -21,5 +23,12 @@ public class InventoryUI : MonoBehaviour
     {
         playerInventory.gameObject.SetActive(true);
         openedInventory.gameObject.SetActive(true);
+    }
+
+    public void CloseChest()
+    {
+        playerInventory.gameObject.SetActive(false);
+        openedInventory.gameObject.SetActive(false);
+        playerGridMovement.EnableMovement = true;
     }
 }
