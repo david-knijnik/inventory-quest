@@ -211,7 +211,6 @@ MonoBehaviour:
   inventorySlotPrefab: {fileID: 109940956861850194, guid: b0890780c85b66e4b8c5361a5a91baa7, type: 3}
   ItemDragAndDropPrefab: {fileID: 28405598560890319, guid: 03bf4fc26cbda794b8fac69a7f0b168a, type: 3}
   inventoryLayout: {fileID: 1666513684}
-  carrotItem: {fileID: 11400000, guid: 832c9315718409c4c81f2b70c4db5400, type: 2}
   ItemSlots: []
 --- !u!1 &97358745
 GameObject:
@@ -17583,7 +17582,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -17917,7 +17916,6 @@ MonoBehaviour:
   inventorySlotPrefab: {fileID: 109940956861850194, guid: b0890780c85b66e4b8c5361a5a91baa7, type: 3}
   ItemDragAndDropPrefab: {fileID: 28405598560890319, guid: 03bf4fc26cbda794b8fac69a7f0b168a, type: 3}
   inventoryLayout: {fileID: 1813429625}
-  carrotItem: {fileID: 11400000, guid: 832c9315718409c4c81f2b70c4db5400, type: 2}
   ItemSlots: []
 --- !u!1 &619394800
 GameObject:
@@ -18061,7 +18059,7 @@ GameObject:
   - component: {fileID: 907815355}
   - component: {fileID: 907815354}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Save Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18319,8 +18317,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Save Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04d668591da66594d89dd0b763b0ca01, type: 2}
+  m_sharedMaterial: {fileID: -59272471342029241, guid: 04d668591da66594d89dd0b763b0ca01, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18344,15 +18342,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3.5
-  m_fontSizeBase: 3.5
+  m_fontSize: 8.9
+  m_fontSizeBase: 8.9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
   m_fontSizeMax: 0
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
