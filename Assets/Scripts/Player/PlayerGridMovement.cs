@@ -41,7 +41,6 @@ public class PlayerGridMovement : MonoBehaviour
 
     private IEnumerator MoveTowards()
     {
-        Debug.Log("Starting Move coroutine");
         isMoving = true;
         while (movementCommands.Count > 0)
         {
