@@ -6,29 +6,27 @@ using UnityEngine.UI;
 public class InventoryBox : MonoBehaviour
 {
     [SerializeField]
-    private RectTransform inventorySlotPrefab;
+    private InventorySlot inventorySlotPrefab;
     [SerializeField]
-    private Image ItemDragAndDropPrefab;
+    private DragAndDrop ItemDragAndDropPrefab;
     [SerializeField]
     private GridLayoutGroup inventoryLayout;
-    [SerializeField]
-    private Item carrotItem;
+    public List<InventorySlot> ItemSlots;
 
-    private void Start()
+    public void CreateBox(Item[] items)
     {
-        CreateBox(new() { carrotItem, null, null });
-    }
-
-    public void CreateBox(List<Item> items)
-    {
-        foreach(var item in items)
+        ItemSlots = new();
+        foreach (var item in items)
         {
             var newSlot = Instantiate(inventorySlotPrefab, inventoryLayout.transform);
+            ItemSlots.Add(newSlot);
             if (item != null)
             {
-                var newItemDragAndDrop = Instantiate(ItemDragAndDropPrefab, newSlot.transform);
-                newItemDragAndDrop.sprite = item.InventorySprite;
+                var itemDragAndDrop = Instantiate(ItemDragAndDropPrefab, newSlot.transform);
+                itemDragAndDrop.GetComponent<Image>().sprite = item.InventorySprite;
+                newSlot.CurrentItem = item;
             }
         }
     }
+
 }

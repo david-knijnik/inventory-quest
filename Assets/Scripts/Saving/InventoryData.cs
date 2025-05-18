@@ -5,6 +5,6 @@ using UnityEngine;
 [Serializable]
 public class InventoryData
 {
-    public List<Item> Items;
+    public Item[] Items;
 
 }

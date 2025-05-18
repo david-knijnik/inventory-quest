@@ -20,7 +20,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     public void OnEndDrag(PointerEventData eventData)
     {
         var slot = eventData.hovered.Find(hovered => hovered.GetComponent<InventorySlot>()!=null);
-
+        //TODO make drag and drop affect saving
         if (slot != null)
             transform.position = slot.transform.position;
         else 

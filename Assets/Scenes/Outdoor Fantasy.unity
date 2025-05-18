@@ -208,9 +208,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac1c63e125a250d419fc4b42ed9276e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySlotPrefab: {fileID: 658034664978721996, guid: b0890780c85b66e4b8c5361a5a91baa7, type: 3}
+  inventorySlotPrefab: {fileID: 109940956861850194, guid: b0890780c85b66e4b8c5361a5a91baa7, type: 3}
+  ItemDragAndDropPrefab: {fileID: 28405598560890319, guid: 03bf4fc26cbda794b8fac69a7f0b168a, type: 3}
   inventoryLayout: {fileID: 1666513684}
-  carrotItem: {fileID: 0}
+  carrotItem: {fileID: 11400000, guid: 832c9315718409c4c81f2b70c4db5400, type: 2}
+  ItemSlots: []
 --- !u!1 &97358745
 GameObject:
   m_ObjectHideFlags: 0
@@ -17736,7 +17738,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 0.82666665
+  orthographic size: 0.589488
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -17912,9 +17914,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac1c63e125a250d419fc4b42ed9276e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySlotPrefab: {fileID: 658034664978721996, guid: b0890780c85b66e4b8c5361a5a91baa7, type: 3}
+  inventorySlotPrefab: {fileID: 109940956861850194, guid: b0890780c85b66e4b8c5361a5a91baa7, type: 3}
+  ItemDragAndDropPrefab: {fileID: 28405598560890319, guid: 03bf4fc26cbda794b8fac69a7f0b168a, type: 3}
   inventoryLayout: {fileID: 1813429625}
-  carrotItem: {fileID: 0}
+  carrotItem: {fileID: 11400000, guid: 832c9315718409c4c81f2b70c4db5400, type: 2}
+  ItemSlots: []
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -18126,7 +18130,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 907815355}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1379155665}
+        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
+        m_MethodName: SaveItemData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &907815355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18409,7 +18425,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173fd860e3215f64885f6d005ec108e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventories: []
+  inventories:
+  - {fileID: 64974306}
+  - {fileID: 567571486}
+  startingItem: {fileID: 11400000, guid: 832c9315718409c4c81f2b70c4db5400, type: 2}
 --- !u!4 &1379155666
 Transform:
   m_ObjectHideFlags: 0
