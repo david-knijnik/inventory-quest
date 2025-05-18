@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 658034664978721996}
   - component: {fileID: 2678221216030964944}
+  - component: {fileID: 109940956861850194}
   - component: {fileID: 1454214266175726382}
   m_Layer: 5
   m_Name: Inventory Slot
@@ -45,6 +46,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3414767634534502468}
   m_CullTransparentMesh: 1
+--- !u!114 &109940956861850194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3414767634534502468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74635c23d6c45aa4f94f9de031ba99a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1454214266175726382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +74,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
