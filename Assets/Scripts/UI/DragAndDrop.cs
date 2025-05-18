@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     private Vector2 startingPosition;
+    private InventorySlot startingSlot;
     public void OnBeginDrag(PointerEventData eventData)
     {
         startingPosition = transform.position;
         GetComponent<Image>().raycastTarget = false;
+        var slot = eventData.hovered.Find(hovered => hovered.GetComponent<InventorySlot>() != null);
+        startingSlot = slot.GetComponent<InventorySlot>();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -20,11 +23,15 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     public void OnEndDrag(PointerEventData eventData)
     {
         var slot = eventData.hovered.Find(hovered => hovered.GetComponent<InventorySlot>()!=null);
-        //TODO make drag and drop affect saving
         if (slot != null)
+        {
+            slot.GetComponent<InventorySlot>().CurrentItem = startingSlot.CurrentItem;
+            startingSlot.CurrentItem = null;
             transform.position = slot.transform.position;
-        else 
+        }
+        else
             transform.position = startingPosition;
+
         GetComponent<Image>().raycastTarget = true;
 
     }
