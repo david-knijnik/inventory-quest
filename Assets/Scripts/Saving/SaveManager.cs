@@ -36,8 +36,17 @@ public class SaveManager : MonoBehaviour
             for (int inventoryIndex = 0; inventoryIndex < inventories.Length; inventoryIndex++)
             {
                 InventoryBox inventoryBox = inventories[inventoryIndex];
-                inventoryBox.CreateBox(new Item[] { startingItem, null, null });
+                Item[] itemSlots = new Item[10];
+                if (inventoryIndex == 1) // if creating chest inventory
+                {
+                    // Add items to it.
+                    itemSlots[0] = startingItem;
+                    itemSlots[6] = startingItem;
+                }
+
+                inventoryBox.CreateBox(itemSlots);
             }
+
         }
     }
 
